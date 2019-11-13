@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 class="text-center"><%= @restaurant.name %></h1>
+  <h2 class="text-center"><%= @restaurant.address %></h2>
+  <h2 class="text-center"><%= @restaurant.category %></h2>
+  <h2 class="text-center"><%= @restaurant.phone_number %></h2>
+  <div>
+    <%= link_to 'Add a review', new_restaurant_review_path(@restaurant), class: "d-flex p-2 btn btn-success justify-content-center" %>
+    <%= link_to 'Back to list', restaurants_path, class: "d-flex p-2 btn btn-primary justify-content-center" %>
+  </div>
+  <br>
+  <div>
+    <h3 class="text-center"> Reviews</h3>
+    <ol>
+      <% @restaurant.reviews.each do |review| %>
+      <li><%= review.content %><%= "  **  rating: " %><%= review.rating %></li>
+    <% end %>
+    </ol>
+  </div>
+</div>
+

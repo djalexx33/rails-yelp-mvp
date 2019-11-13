@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 class="text-center">Fill in the form</h1>
+  <div class="container">
+    <%= simple_form_for @restaurant do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :category, collection: Restaurant::CATEGORIES %>
+      <%= f.input :phone_number %>
+      <%= f.submit "submit", class: "btn btn-primary w-100" %>
+    <% end %>
+  </div>
+</div>
